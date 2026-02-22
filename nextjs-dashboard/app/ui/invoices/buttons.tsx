@@ -39,3 +39,30 @@ export function DeleteInvoice({ id }: { id: string }) {
     </form>
   );
 }
+
+//if use client
+// export function DeleteInvoice({ id }: { id: string }) {
+//   const [isPending, startTransition] = useTransition();
+//   const handleDelete = () => {
+//     const ok = window.confirm('Delete invoice?');
+//     if (!ok) return;
+
+//     startTransition(async () => {
+//       await deleteInvoice(id);
+//     });
+//   };
+
+//   return (
+   
+//       <button 
+//       type="submit" 
+//       className="rounded-md border p-2 hover:bg-gray-100"
+//       onClick={handleDelete} 
+//       disabled={isPending}
+//       >
+//         <span className="sr-only">Delete</span>
+//         <TrashIcon className="w-5"/>
+//       </button>
+
+//   );
+// }
