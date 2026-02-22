@@ -1,0 +1,42 @@
+'use server';
+import { z } from 'zod';
+import postgres from 'postgres';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+
+const connectionString = process.env.POSTGRES_URL!;
+
+const useSsl =
+  !connectionString.includes('localhost') &&
+  !connectionString.includes('127.0.0.1');
+
+const sql = postgres(process.env.POSTGRES_URL!,  {ssl: useSsl ? 'require' : false });
+
+const FormSchema = z.object({
+    id: z.string(),
+    customerId: z.string(),
+    amount: z.coerce.number(),
+    status: z.enum(['pending', 'paid']),
+    date: z.string(),
+  });
+   
+const CreateInvoice = FormSchema.omit({ id: true, date: true });
+
+export async function createInvoice(formData: FormData) {
+    const { customerId, amount, status } = CreateInvoice.parse({
+        customerId: formData.get('customerId'),
+        amount: formData.get('amount'),
+        status: formData.get('status'),
+      });
+      const amountInCents = amount * 100;
+      //create new invoice date
+      const date = new Date().toISOString().split('T')[0];
+      
+      await sql`
+    INSERT INTO invoices (customer_id, amount, status, date)
+    VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
+  `;
+    //revalidate react cash
+  revalidatePath('/dashboard/invoices');
+  redirect('/ui/dashboard/invoices');
+}
