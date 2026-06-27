@@ -1,8 +1,3 @@
-
 export default function page() {
-  return (
-    <div>
-      Nested Page
-    </div>
-  )
+  return <div>Nested Page</div>;
 }
