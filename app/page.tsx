@@ -1,5 +1,7 @@
-import cls from '@/app/ui/home.module.css';
+import { redirect } from 'next/navigation';
 
-export default function Page() {
-  return <main className="flex min-h-screen flex-col p-6">Main Page</main>;
+import { defaultLocale } from '@/shared/i18n';
+
+export default function RootPage() {
+  redirect(`/${defaultLocale}`);
 }
