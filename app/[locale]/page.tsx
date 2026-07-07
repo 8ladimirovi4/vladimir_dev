@@ -8,7 +8,7 @@ import { Work } from '@/widgets/work';
 
 export default function Page() {
   return (
-    <main>
+    <main className="relative">
       <Hero />
       <TechnicalExpertise />
       <Projects />

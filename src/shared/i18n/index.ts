@@ -1,2 +1,2 @@
 export { locales, defaultLocale, type Locale } from './config';
-export { getDictionary } from './get-dictionary';
+export { getDictionary, type Dictionary } from './get-dictionary';
