@@ -1,5 +1,21 @@
-export { Button } from './button';
-export { Dialog } from './dialog';
-export { Tooltip } from './tooltip';
+export { Button, buttonVariants } from './button';
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from './dialog';
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from './tooltip';
 export { Switch } from './switch';
 export { ThemeProvider } from './theme-provider';
