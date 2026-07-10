@@ -19,7 +19,7 @@ export default async function Page({
   return (
     <main className="relative">
       <Hero content={dictionary.hero} locale={locale} />
-      <TechnicalExpertise />
+      <TechnicalExpertise content={dictionary.expertise} />
       <Projects />
       <Work />
       <Philosophy />

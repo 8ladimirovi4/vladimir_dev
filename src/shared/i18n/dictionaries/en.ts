@@ -29,6 +29,35 @@ const en = {
     seoKeywords:
       'Senior Frontend Developer, React, Redux, TypeScript, JavaScript, HTML, CSS, Feature-Sliced Design, real-time UI, WebSocket, REST API, PostgreSQL, Git, GitHub, Figma, Scrum, component library, code review, mentoring, team lead, CI/CD, performance optimization, fintech-ready, product engineering',
   },
+  expertise: {
+    title: 'Technical Expertise',
+    cards: [
+      {
+        id: 'core',
+        title: 'Core Stack',
+        description: 'Expert level',
+        items: ['React & TypeScript', 'Redux Toolkit', 'JavaScript & HTML/CSS'],
+      },
+      {
+        id: 'architecture',
+        title: 'Architecture',
+        description: 'Enterprise patterns',
+        items: ['Feature-Sliced Design', 'CI/CD & Git', 'Scrum & Figma'],
+      },
+      {
+        id: 'ai',
+        title: 'AI Integration',
+        description: 'Applied ML in production',
+        items: ['RAG pipelines', 'Qdrant vector DB', 'Nest.js APIs'],
+      },
+      {
+        id: 'performance',
+        title: 'Performance',
+        description: 'Real-time solutions',
+        items: ['WebSocket & REST', 'PostgreSQL', 'Vitest & code quality'],
+      },
+    ],
+  },
   footer: {
     copyEmail: 'Copy email',
     copied: 'Copied!',
