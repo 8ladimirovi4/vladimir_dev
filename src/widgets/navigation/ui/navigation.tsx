@@ -19,9 +19,12 @@ export function Navigation({ locale, dictionary }: NavigationProps) {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
-        <div className="font-mono text-lg tracking-tight">
+        <a
+          href="#top"
+          className="font-mono text-lg tracking-tight hover:text-foreground transition-colors"
+        >
           {dictionary.logo}
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           <NavLinks labels={dictionary.nav} />

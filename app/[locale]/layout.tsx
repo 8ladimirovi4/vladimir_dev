@@ -21,7 +21,7 @@ export default async function LocaleLayout({
   const dictionary = await getDictionary(locale);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div id="top" className="min-h-screen bg-background text-foreground">
       <Navigation locale={locale} dictionary={dictionary} />
       {children}
       <Footer dictionary={dictionary} />

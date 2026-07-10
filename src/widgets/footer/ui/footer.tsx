@@ -15,19 +15,22 @@ export function Footer({ dictionary }: FooterProps) {
     <footer
       data-widget="footer"
       id="contact"
-      className="py-16 px-6 lg:px-12 border-t border-border/50"
+      className="py-4 px-6 lg:px-12 border-t border-border/50"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="font-mono text-xl tracking-tight">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <a
+            href="#top"
+            className="font-mono text-xl tracking-tight hover:text-foreground transition-colors"
+          >
             {dictionary.logo}
-          </div>
+          </a>
           <ContactLinks labels={dictionary.footer.social} />
           <EmailCopy
             email={contacts.email}
             copyLabel={dictionary.footer.copyEmail}
             copiedLabel={dictionary.footer.copied}
-          />{' '}
+          />
         </div>
       </div>
     </footer>
