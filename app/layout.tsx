@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Vladimir Leonov',
   },
   description:
-    'Senior Fullstack Developer with 7+ years in IT: building scalable React/Next.js and TypeScript interfaces, architecting complex UI systems, mentoring teams, and delivering product-focused solutions.',
+    'Senior Frontend Engineer with 7+ years in programming: React, TypeScript, Redux, FSD architecture, real-time UI, CI/CD, team leadership. Building scalable product interfaces for fintech and high-growth startups.',
   metadataBase: new URL('https://www.linkedin.com/in/le-vladimir/'),
 };
 
