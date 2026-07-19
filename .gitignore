@@ -43,3 +43,6 @@ dev
 # Personal résumés (local only — add to public/ on the server, not in git)
 /public/Vladimir_*.pdf
 /dev/CV/*.pdf
+
+#cursor
+.cursor
