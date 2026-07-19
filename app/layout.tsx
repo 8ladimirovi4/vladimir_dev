@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: 'Vladimir Leonov',
   },
   description:
-    'Senior Frontend Engineer with 7+ years in programming: React, TypeScript, Redux, FSD architecture, real-time UI, CI/CD, team leadership. Building scalable product interfaces for fintech and high-growth startups.',
+    'Senior Frontend & AI Engineer with 7+ years in programming: React, TypeScript, NestJS, RAG (Qdrant + Gemini), FSD architecture, real-time UI, team leadership. Building scalable product interfaces and production AI systems for fintech and high-growth startups.',
   metadataBase: new URL('https://www.linkedin.com/in/le-vladimir/'),
 };
 

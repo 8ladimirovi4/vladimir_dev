@@ -21,7 +21,7 @@ export default async function Page({
       <Hero content={dictionary.hero} locale={locale} />
       <TechnicalExpertise content={dictionary.expertise} />
       <Projects content={dictionary.projects} />
-      <Work />
+      <Work content={dictionary.work} />
       <Philosophy />
     </main>
   );

@@ -10,24 +10,24 @@ const en = {
     contact: 'Contact',
   },
   hero: {
-    title: 'Senior Frontend Engineer',
-    titleLine2: 'Building reliable, product-grade interfaces at scale',
+    title: 'Senior Frontend & AI Engineer',
+    titleLine2: 'Product-grade interfaces — and production AI systems',
     subheadline:
-      '7+ years in programming with React & TypeScript. I architect frontend systems, lead teams, and ship complex UIs — from real-time operational dashboards to CRM platforms and UI for SBO controllers built from scratch. Focused on performance, code quality, and predictable delivery in fast-moving product environments.',
-    badge: '7+ years in programming · React · TypeScript · Team Lead',
+      '7+ years in programming with React & TypeScript. I architect frontend systems, lead teams, and ship complex UIs — real-time dashboards and CRM. Beyond the UI layer, I build AI RAG APIs on NestJS with hybrid retrieval over vector databases and LLMs — semantic search and knowledge-base Q&A. Focused on performance, code quality, and predictable delivery.',
+    badge: '7+ years · React · TypeScript · NestJS · RAG · Team Lead',
     bullets: [
       'Architected FSD-based frontend → 40% faster UI module delivery',
       'Real-time dashboards (WebSocket) for mission-critical operations',
+      'Knowledge Hub — NestJS RAG API (Qdrant + Gemini) for semantic search & doc Q&A',
       'Established code quality gates → 20% fewer bugs reaching QA',
-      'CI/CD pipelines with automated tests → reliable production releases',
     ],
     ctaCases: 'View case studies',
     ctaCv: 'Download CV',
-    cvAlt: 'Russian version',
+    cvAlt: 'CV Russian version',
     microcopy:
-      'Open to product engineering roles in fintech & high-growth startups',
+      'Open to product & AI engineering roles in fintech & high-growth startups',
     seoKeywords:
-      'Senior Frontend Developer, React, Redux, TypeScript, JavaScript, HTML, CSS, Feature-Sliced Design, real-time UI, WebSocket, REST API, PostgreSQL, Git, GitHub, Figma, Scrum, component library, code review, mentoring, team lead, CI/CD, performance optimization, fintech-ready, product engineering',
+      'Senior Frontend Developer, AI Engineer, React, Redux, TypeScript, NestJS, RAG, Qdrant, Gemini, vector database, JavaScript, HTML, CSS, Feature-Sliced Design, real-time UI, WebSocket, REST API, PostgreSQL, Git, GitHub, Figma, Scrum, component library, code review, mentoring, team lead, CI/CD, performance optimization, fintech-ready, product engineering',
   },
   expertise: {
     title: 'Technical Expertise',
@@ -88,6 +88,34 @@ const en = {
       },
     },
   },
+  work: {
+    title: 'Work Experience',
+    currentBadge: 'Current',
+    materialsLabel: 'Course materials',
+    jobs: {
+      mechatronica: {
+        title: 'Senior Frontend Developer',
+        company: 'NTC "Mechatronica"',
+        period: 'Jan 2023 – Present',
+        description:
+          'Leading the React SPA rebuild of a next-gen industrial SCADA platform (legacy Webix MPA → modern stack) for engineers and operators. Apply modern frontend architectures (FSD, Atomic Design, Clean Architecture). Lead a team of 3 FE: requirements decomposition, mentoring, code review, hiring. Work in Agile (Scrum, sprints, Kanban). Real-time WebSocket UI and Code Quality practices (ESLint, Husky, Vitest) → 40% faster UI module delivery, 20% fewer bugs before QA.',
+      },
+      itfrog: {
+        title: 'Frontend Developer',
+        company: 'ITFrog LLC',
+        period: 'May 2020 – Sep 2022',
+        description:
+          'Built a corporate sales CRM from scratch to replace scattered Excel workflows — React/Redux Toolkit architecture, reusable UI kit, and Figma-to-code delivery with Tailwind. Hit FCP under 1.5s via code splitting and lazy loading; cut manager data-entry errors by 25% through validation and UX (incl. batch deal editing).',
+      },
+      'ait-instructor': {
+        title: 'Frontend Instructor',
+        company: 'AIT TR GmbH',
+        period: '2024 – 2025',
+        description:
+          'Taught frontend fundamentals through React for career-switchers at a DEKRA-accredited IT school in Germany (AIT TR). Designed and delivered a practical curriculum — HTML, CSS, JavaScript, TypeScript, React, Router, Formik/Yup, Redux Toolkit — with live sessions and lesson materials in a public GitHub repo. Strengthens mentoring and communication skills alongside product team leadership.',
+      },
+    },
+  },
   footer: {
     copyEmail: 'Copy email',
     copied: 'Copied!',
@@ -99,7 +127,7 @@ const en = {
   },
   meta: {
     description:
-      'Senior Frontend Engineer with 7+ years in programming: React, TypeScript, Redux, FSD architecture, real-time UI, CI/CD, team leadership. Building scalable product interfaces for fintech and high-growth startups.',
+      'Senior Frontend & AI Engineer with 7+ years in programming: React, TypeScript, NestJS, RAG (Qdrant + Gemini), FSD architecture, real-time UI, team leadership. Building scalable product interfaces and production AI systems for fintech and high-growth startups.',
   },
 } as const;
 
