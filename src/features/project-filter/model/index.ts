@@ -3,3 +3,8 @@
 import type { ProjectStack } from '@/entities/project';
 
 export type StackFilter = ProjectStack | null;
+
+export {
+  ProjectStackFilterProvider,
+  useProjectStackFilterContext,
+} from './stack-filter-context';

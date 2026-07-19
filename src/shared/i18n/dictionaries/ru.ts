@@ -31,6 +31,7 @@ const ru = {
   },
   expertise: {
     title: 'Техническая экспертиза',
+    filterHint: 'Нажмите, чтобы отфильтровать проекты',
     cards: [
       {
         id: 'core',
@@ -57,6 +58,35 @@ const ru = {
         items: ['WebSocket & REST', 'PostgreSQL', 'Vitest & code quality'],
       },
     ],
+  },
+  projects: {
+    title: 'Проекты',
+    ndaLabel: 'Под NDA',
+    openRepoLabel: 'Открыть репозиторий',
+    clearFilter: 'Показать все проекты',
+    emptyFilter: 'Нет проектов для этого стека.',
+    cards: {
+      'scada-nextgen': {
+        title: 'SCADA-платформа нового поколения',
+        description:
+          'Руковожу заменой легаси industrial SCADA (Webix MPA → React SPA) для инженеров и операторов. FSD-архитектура, команда из 3 FE, real-time UI на WebSocket — +40% к скорости UI-модулей, −20% багов до QA.',
+      },
+      'crm-sales': {
+        title: 'Корпоративная CRM',
+        description:
+          'CRM для отдела продаж с нуля вместо Excel: архитектура React/Redux Toolkit, UI-kit и FCP < 1.5s. Ошибки ввода менеджеров −25% за счёт валидации и UX.',
+      },
+      'knowledge-hub-rag': {
+        title: 'Knowledge Hub — AI RAG API',
+        description:
+          'Production-shaped backend на NestJS для AI knowledge-продукта: RAG по статьям (Qdrant, hybrid retrieval + rerank), Gemini LLM, auth/RBAC и Docker (Postgres + vector DB). Точка входа в коммерческую разработку React/Next.js + NestJS + AI — copilot, semantic search, Q&A по базе знаний.',
+      },
+      'rest-client-app': {
+        title: 'REST Client — Next.js API Workbench',
+        description:
+          'Team Lead в команде из 2 FE: Postman-style REST-клиент на Next.js 15 — auth, история запросов, переменные окружения, code snippets и i18n, плюс server-side forwarding для CORS. Production-shaped foundation на React/Next для коммерческих developer tools и внутренних API-консолей.',
+      },
+    },
   },
   footer: {
     copyEmail: 'Копировать email',

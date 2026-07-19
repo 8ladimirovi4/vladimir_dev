@@ -19,7 +19,7 @@ export function TechnicalExpertise({ content }: TechnicalExpertiseProps) {
         <h2 className="text-3xl lg:text-5xl font-bold mb-16 text-center">
           {content.title}
         </h2>
-        <SkillCardsGrid cards={content.cards} />
+        <SkillCardsGrid cards={content.cards} filterHint={content.filterHint} />
       </div>
     </section>
   );
