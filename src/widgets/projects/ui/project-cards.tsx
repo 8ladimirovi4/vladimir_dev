@@ -9,6 +9,7 @@ import {
 } from '@/entities/project';
 import { useProjectStackFilterContext } from '@/features/project-filter';
 import type { Dictionary } from '@/shared/i18n';
+import { CardsSlider } from '@/shared/ui';
 
 import { ProjectCard } from './project-card';
 
@@ -19,7 +20,6 @@ type ProjectCardsProps = {
 
 export function ProjectCards({ content, stackFilter }: ProjectCardsProps) {
   const contextStack = useProjectStackFilterContext();
-  console.log('======>contextStack', contextStack);
   const activeStack = stackFilter !== undefined ? stackFilter : contextStack;
   const visibleProjects = filterProjectsByStack(projects, activeStack);
 
@@ -35,9 +35,10 @@ export function ProjectCards({ content, stackFilter }: ProjectCardsProps) {
   }
 
   return (
-    <div
-      data-segment="project-cards"
-      className="grid grid-cols-1 md:grid-cols-2 gap-8"
+    <CardsSlider
+      segment="project-cards-slider"
+      prevLabel={content.prevLabel}
+      nextLabel={content.nextLabel}
     >
       {visibleProjects.map((project, index) => {
         const copy = content.cards[project.id as keyof typeof content.cards];
@@ -54,6 +55,6 @@ export function ProjectCards({ content, stackFilter }: ProjectCardsProps) {
           />
         );
       })}
-    </div>
+    </CardsSlider>
   );
 }

@@ -32,10 +32,7 @@ function ProjectAccessAction({
 }) {
   if (access.kind === 'nda') {
     return (
-      <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-        {/* <Lock className="w-3.5 h-3.5" aria-hidden /> */}
-        {/* {ndaLabel} */}
-      </span>
+      <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground"/>
     );
   }
 
@@ -67,7 +64,7 @@ export function ProjectCard({
       data-segment="project-card"
       data-project={project.id}
       data-stacks={project.stacks.join(' ')}
-      className={`group relative p-8 rounded-2xl bg-gradient-to-br ${styles.gradient} backdrop-blur-xl border ${styles.border} hover:shadow-xl transition-all duration-200 hover:-translate-y-1`}
+      className={`group relative flex h-full flex-col p-8 rounded-2xl bg-gradient-to-br ${styles.gradient} backdrop-blur-xl border ${styles.border} hover:shadow-xl transition-all duration-200 hover:-translate-y-1`}
     >
       <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/30 flex items-center justify-center font-mono text-sm">
         {number}
@@ -75,11 +72,11 @@ export function ProjectCard({
 
       <h3 className="text-2xl font-bold mb-4 pr-12">{copy.title}</h3>
 
-      <p className="text-muted-foreground mb-6 leading-relaxed">
+      <p className="text-muted-foreground mb-6 leading-relaxed flex-1">
         {copy.description}
       </p>
 
-      <div className="flex items-end justify-between gap-4">
+      <div className="flex items-end justify-between gap-4 mt-auto">
         <div className="min-w-0 px-3 py-1.5 bg-background/50 border border-border/50 rounded-lg text-xs font-mono break-words">
           {project.tech}
         </div>

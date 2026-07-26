@@ -1,4 +1,8 @@
 export { Button, buttonVariants } from './button';
+export { CardsSlider } from './cards-slider';
+export { SectionGlow } from './section-glow';
+
+
 export {
   Dialog,
   DialogClose,

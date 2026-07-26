@@ -65,6 +65,8 @@ const en = {
     openRepoLabel: 'Open repository',
     clearFilter: 'Show all projects',
     emptyFilter: 'No projects match this stack yet.',
+    prevLabel: 'Previous projects',
+    nextLabel: 'Next projects',
     cards: {
       'scada-nextgen': {
         title: 'Next-gen SCADA Platform',
@@ -92,6 +94,8 @@ const en = {
     title: 'Work Experience',
     currentBadge: 'Current',
     materialsLabel: 'Course materials',
+    prevLabel: 'Previous roles',
+    nextLabel: 'Next roles',
     jobs: {
       mechatronica: {
         title: 'Senior Frontend Developer',

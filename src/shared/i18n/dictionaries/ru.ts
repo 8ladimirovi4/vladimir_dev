@@ -65,6 +65,8 @@ const ru = {
     openRepoLabel: 'Открыть репозиторий',
     clearFilter: 'Показать все проекты',
     emptyFilter: 'Нет проектов для этого стека.',
+    prevLabel: 'Предыдущие проекты',
+    nextLabel: 'Следующие проекты',
     cards: {
       'scada-nextgen': {
         title: 'SCADA-платформа нового поколения',
@@ -92,6 +94,8 @@ const ru = {
     title: 'Опыт работы',
     currentBadge: 'Сейчас',
     materialsLabel: 'Материалы курса',
+    prevLabel: 'Предыдущие роли',
+    nextLabel: 'Следующие роли',
     jobs: {
       mechatronica: {
         title: 'Senior Frontend Developer',
