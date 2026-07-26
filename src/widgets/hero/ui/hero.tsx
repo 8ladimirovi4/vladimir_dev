@@ -2,6 +2,7 @@
 
 import type { Dictionary, Locale } from '@/shared/i18n';
 import { getCvDownload } from '@/shared/config/cv';
+import { SectionGlow } from '@/shared/ui';
 
 import { CodeAnimation } from './code-animation-loader';
 import { CvAltLink, CvDownloadPrimary } from './cv-download';
@@ -22,8 +23,7 @@ export function Hero({ content, locale }: HeroProps) {
       id="hero"
       className="min-h-screen flex items-center justify-center px-6 lg:px-12 pt-20 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-background to-blue-500/5 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(120,119,198,0.05),transparent_50%)] pointer-events-none" />
+      <SectionGlow />
 
       <div className="max-w-5xl mx-auto text-center relative z-10 w-full py-8 md:py-20">
         <CodeAnimation />
