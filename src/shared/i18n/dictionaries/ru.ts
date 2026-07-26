@@ -8,6 +8,8 @@ const ru = {
     projects: 'Проекты',
     engineering: 'Инженерия',
     contact: 'Контакты',
+    openMenu: 'Открыть меню',
+    closeMenu: 'Закрыть меню',
   },
   hero: {
     title: 'Senior Frontend & AI Engineer',

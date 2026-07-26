@@ -1,4 +1,4 @@
-/** @layer widgets / slice navigation / segment ui — server (anchor links) */
+/** @layer widgets / slice navigation / segment ui — server (desktop anchor links) */
 
 type NavLabels = {
   work: string;
@@ -8,7 +8,7 @@ type NavLabels = {
 };
 
 const linkClassName =
-  'text-sm text-muted-foreground hover:text-foreground transition-colors';
+  'cursor-pointer text-sm text-muted-foreground transition-colors hover:text-foreground';
 
 type NavLinksProps = {
   labels: NavLabels;
@@ -19,7 +19,7 @@ export function NavLinks({ labels }: NavLinksProps) {
     <nav
       data-segment="nav-links"
       aria-label="Primary"
-      className="hidden md:flex items-center gap-8"
+      className="flex items-center gap-8"
     >
       <a href="#work" className={linkClassName}>
         {labels.work}

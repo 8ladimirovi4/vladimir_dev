@@ -21,21 +21,21 @@ export function Hero({ content, locale }: HeroProps) {
     <section
       data-widget="hero"
       id="hero"
-      className="min-h-screen flex items-center justify-center px-6 lg:px-12 pt-20 relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-20 relative overflow-hidden"
     >
       <SectionGlow />
 
       <div className="max-w-5xl mx-auto text-center relative z-10 w-full py-8 md:py-20">
         <CodeAnimation />
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
           <span className="block">{content.title}</span>
-          <span className="block text-2xl md:text-4xl lg:text-5xl text-foreground/75 mt-3 font-semibold">
+          <span className="block text-xl sm:text-2xl md:text-4xl lg:text-5xl text-foreground/75 mt-2 sm:mt-3 font-semibold">
             {content.titleLine2}
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
           {content.subheadline}
         </p>
 

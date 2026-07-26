@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { GitHubIcon, LinkedInIcon } from '@/shared/assets/icons';
 import { contacts } from '@/shared/config/contacts';
 import type { Dictionary } from '@/shared/i18n';
+import { copyTextToClipboard } from '@/shared/lib';
 import { Modal } from '@/shared/ui';
 
 type ContactModalContent = Dictionary['contactModal'];
@@ -56,7 +57,8 @@ export function ContactModal({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(contacts.email);
+    const ok = await copyTextToClipboard(contacts.email);
+    if (!ok) return;
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
