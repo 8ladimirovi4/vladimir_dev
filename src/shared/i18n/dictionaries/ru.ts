@@ -1,9 +1,9 @@
 /** @layer shared / slice i18n / segment dictionaries */
 
 const ru = {
-  logo: 'Vladimir.dev',
+  logo: 'Vladimir_Leonov.dev',
   nav: {
-    work: 'Работа',
+    work: 'Опыт',
     stack: 'Стек',
     projects: 'Проекты',
     engineering: 'Инженерия',
@@ -129,6 +129,12 @@ const ru = {
       { id: 'mentorship', label: 'Менторство' },
       { id: 'architecture', label: 'Масштабируемая архитектура' },
     ],
+  },
+  contactModal: {
+    title: 'Связаться со мной',
+    email: 'Email',
+    copy: 'Копировать',
+    copied: 'Скопировано!',
   },
   footer: {
     copyEmail: 'Копировать email',

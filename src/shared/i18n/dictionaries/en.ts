@@ -1,7 +1,7 @@
 /** @layer shared / slice i18n / segment dictionaries */
 
 const en = {
-  logo: 'Vladimir.dev',
+  logo: 'Vladimir_Leonov.dev',
   nav: {
     work: 'Work',
     stack: 'Stack',
@@ -129,6 +129,12 @@ const en = {
       { id: 'mentorship', label: 'Mentorship' },
       { id: 'architecture', label: 'Scalable Architecture' },
     ],
+  },
+  contactModal: {
+    title: 'Get in Touch',
+    email: 'Email',
+    copy: 'Copy',
+    copied: 'Copied!',
   },
   footer: {
     copyEmail: 'Copy email',

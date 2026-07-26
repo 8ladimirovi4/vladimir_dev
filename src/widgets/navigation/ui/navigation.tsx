@@ -26,9 +26,13 @@ export function Navigation({ locale, dictionary }: NavigationProps) {
           {dictionary.logo}
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="flex items-center gap-8">
           <NavLinks labels={dictionary.nav} />
-          <ContactBtn label={dictionary.nav.contact} />
+          <ContactBtn
+            label={dictionary.nav.contact}
+            content={dictionary.contactModal}
+            social={dictionary.footer.social}
+          />
         </div>
 
         <div className="flex items-center gap-3">

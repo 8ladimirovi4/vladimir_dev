@@ -1,6 +1,5 @@
 /** @layer app / LocaleLayout — app/[locale]/layout.tsx */
 
-import { ContactModal } from '@/features/contact-modal';
 import { getDictionary, locales, type Locale } from '@/shared/i18n';
 import { Footer } from '@/widgets/footer';
 import { Navigation } from '@/widgets/navigation';
@@ -25,7 +24,6 @@ export default async function LocaleLayout({
       <Navigation locale={locale} dictionary={dictionary} />
       {children}
       <Footer dictionary={dictionary} />
-      <ContactModal />
     </div>
   );
 }

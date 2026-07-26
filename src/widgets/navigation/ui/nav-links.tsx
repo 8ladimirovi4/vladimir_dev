@@ -5,7 +5,6 @@ type NavLabels = {
   stack: string;
   projects: string;
   engineering: string;
-  contact: string;
 };
 
 const linkClassName =

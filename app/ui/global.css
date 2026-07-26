@@ -4,9 +4,19 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* Keep layout width stable when overflow is locked (modal open) */
+  scrollbar-gutter: stable;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+/*
+ * If any Radix DialogOverlay (react-remove-scroll) is used elsewhere,
+ * beat its injected !important margin with higher specificity.
+ */
+html body[data-scroll-locked] {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
