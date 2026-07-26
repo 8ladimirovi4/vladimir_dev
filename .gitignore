@@ -40,9 +40,12 @@ next-env.d.ts
 #dev artifacts
 dev
 
-# Personal résumés (local only — add to public/ on the server, not in git)
-/public/Vladimir_*.pdf
+# Personal résumés (local only — add to public/cv/ on the server, not in git)
+/public/cv/*.pdf
 /dev/CV/*.pdf
+
+# Local avatar assets (deploy separately)
+/public/avatar/
 
 #cursor
 .cursor
