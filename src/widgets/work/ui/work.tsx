@@ -13,7 +13,7 @@ export function Work({ content }: WorkProps) {
     <section
       data-widget="work"
       id="work"
-      className="py-32 px-6 lg:px-12 bg-muted/30 scroll-mt-24"
+      className="py-32 px-6 lg:px-12 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl lg:text-5xl font-bold mb-16 text-center">

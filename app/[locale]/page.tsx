@@ -22,7 +22,7 @@ export default async function Page({
       <TechnicalExpertise content={dictionary.expertise} />
       <Projects content={dictionary.projects} />
       <Work content={dictionary.work} />
-      <Philosophy />
+      <Philosophy content={dictionary.philosophy} />
     </main>
   );
 }

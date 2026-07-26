@@ -120,6 +120,16 @@ const en = {
       },
     },
   },
+  philosophy: {
+    title: 'Engineering Philosophy',
+    description:
+      'I build interfaces that stay reliable under real load — and teams that can keep shipping them. Code quality gates, clear architecture, and mentoring are how I turn complex product work into predictable delivery.',
+    principles: [
+      { id: 'quality', label: 'Code Quality' },
+      { id: 'mentorship', label: 'Mentorship' },
+      { id: 'architecture', label: 'Scalable Architecture' },
+    ],
+  },
   footer: {
     copyEmail: 'Copy email',
     copied: 'Copied!',
