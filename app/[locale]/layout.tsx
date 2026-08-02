@@ -1,7 +1,11 @@
 /** @layer app / LocaleLayout — app/[locale]/layout.tsx */
 
 import { inter } from '@/app/ui/fonts';
-import { buildPersonJsonLd, buildWebSiteJsonLd } from '@/shared/lib/json-ld';
+import {
+  buildFaqJsonLd,
+  buildPersonJsonLd,
+  buildWebSiteJsonLd,
+} from '@/shared/lib/json-ld';
 import { buildLocaleMetadata } from '@/shared/lib/metadata';
 import { getDictionary, locales, type Locale } from '@/shared/i18n';
 import { JsonLd, ThemeProvider } from '@/shared/ui';
@@ -37,12 +41,14 @@ export default async function LocaleLayout({
 
   const personJsonLd = buildPersonJsonLd(locale, dictionary);
   const websiteJsonLd = buildWebSiteJsonLd();
+  const faqJsonLd = buildFaqJsonLd(locale, dictionary);
 
   return (
     <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased`}>
         <JsonLd id="json-ld-person" data={personJsonLd} />
         <JsonLd id="json-ld-website" data={websiteJsonLd} />
+        <JsonLd id="json-ld-faq" data={faqJsonLd} />
         <ThemeProvider>
           <div id="top" className="min-h-screen bg-background text-foreground">
             <Navigation locale={locale} dictionary={dictionary} />

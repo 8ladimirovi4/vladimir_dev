@@ -39,7 +39,11 @@ const ru = {
         id: 'core',
         title: 'Основной стек',
         description: 'Экспертный уровень',
-        items: ['React & TypeScript', 'Redux Toolkit', 'JavaScript & HTML/CSS'],
+        items: [
+          'React/NextJS & TypeScript',
+          'Redux Toolkit',
+          'JavaScript & HTML/CSS',
+        ],
       },
       {
         id: 'architecture',
@@ -146,6 +150,33 @@ const ru = {
       linkedin: 'LinkedIn',
       telegram: 'Telegram',
     },
+  },
+  faq: {
+    title: 'Обо мне и FAQ',
+    summary:
+      'Владимир Леонов — Senior Frontend & AI Engineer с 7+ годами в программировании. Строит продуктовые интерфейсы на React/TypeScript, лидирует frontend-команды и запускает NestJS RAG API (Qdrant + Gemini) для semantic search и Q&A по базе знаний — фокус на fintech и high-growth стартапы.',
+    items: [
+      {
+        question: 'Чем занимается Владимир Леонов?',
+        answer:
+          'Senior Frontend & AI Engineer: архитектура React/TypeScript UI, лидирование небольших FE-команд и production NestJS RAG-бэкенды с векторным поиском и LLM.',
+      },
+      {
+        question: 'Какой стек использует?',
+        answer:
+          'Основной стек: React, NextJS, TypeScript, Redux Toolkit. Архитектура: Feature-Sliced Design, CI/CD. AI: NestJS, RAG, Qdrant, Gemini,  Ollama, ChromaDB, Real-time: WebSocket, REST, PostgreSQL.',
+      },
+      {
+        question: 'Открыт ли к новым ролям?',
+        answer:
+          'Да — рассматривает product и AI engineering роли в fintech и high-growth стартапах. Связь: email, LinkedIn, Telegram или GitHub на этом сайте.',
+      },
+      {
+        question: 'Где доступно портфолио?',
+        answer:
+          'Сайт на английском (/en) и русском (/ru), со скачиваемым CV и публичными ссылками на проекты (где нет NDA).',
+      },
+    ],
   },
   meta: {
     title: 'Владимир Леонов — Senior Frontend & AI Engineer',

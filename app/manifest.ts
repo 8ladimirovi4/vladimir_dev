@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
 
   return {
     name: siteConfig.name,
-    short_name: 'Leonov_V.',
+    short_name: 'Leonov_V',
     description: `${siteConfig.jobTitle} — React, TypeScript, NestJS, RAG.`,
     start_url: '/',
     id: siteUrl,

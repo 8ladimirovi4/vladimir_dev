@@ -1,6 +1,7 @@
 /** @layer app / Page — app/[locale]/page.tsx */
 
 import { getDictionary, type Locale } from '@/shared/i18n';
+import { Faq } from '@/widgets/faq';
 import { Hero } from '@/widgets/hero';
 import { Philosophy } from '@/widgets/philosophy';
 import { Projects } from '@/widgets/projects';
@@ -23,6 +24,7 @@ export default async function Page({
       <Projects content={dictionary.projects} />
       <Work content={dictionary.work} />
       <Philosophy content={dictionary.philosophy} />
+      <Faq content={dictionary.faq} />
     </main>
   );
 }

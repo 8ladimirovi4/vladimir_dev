@@ -39,7 +39,11 @@ const en = {
         id: 'core',
         title: 'Core Stack',
         description: 'Expert level',
-        items: ['React & TypeScript', 'Redux Toolkit', 'JavaScript & HTML/CSS'],
+        items: [
+          'React/NextJS & TypeScript',
+          'Redux Toolkit',
+          'JavaScript & HTML/CSS',
+        ],
       },
       {
         id: 'architecture',
@@ -146,6 +150,33 @@ const en = {
       linkedin: 'LinkedIn',
       telegram: 'Telegram',
     },
+  },
+  faq: {
+    title: 'About & FAQ',
+    summary:
+      'Vladimir Leonov is a Senior Frontend & AI Engineer with 7+ years in programming. He builds product-grade React/TypeScript interfaces, leads frontend teams, and ships NestJS RAG APIs (Qdrant + Gemini) for semantic search and knowledge-base Q&A — focused on fintech and high-growth startups.',
+    items: [
+      {
+        question: 'What does Vladimir Leonov do?',
+        answer:
+          'He works as a Senior Frontend & AI Engineer: architecting React/TypeScript UIs, leading small FE teams, and building production NestJS RAG backends with vector search and LLMs.',
+      },
+      {
+        question: 'Which stack does he use?',
+        answer:
+          'Core stack: React, NextJS, TypeScript, Redux Toolkit. Architecture: Feature-Sliced Design, CI/CD. AI: NestJS, RAG pipelines, Qdrant, Gemini, Ollama, ChromaDB, Real-time: WebSocket, REST, PostgreSQL.',
+      },
+      {
+        question: 'Is he open to new roles?',
+        answer:
+          'Yes — open to product and AI engineering roles in fintech and high-growth startups. Contact via email, LinkedIn, Telegram, or GitHub listed on this site.',
+      },
+      {
+        question: 'Where is the portfolio available?',
+        answer:
+          'This site is available in English (/en) and Russian (/ru), with downloadable CV and public project links where not under NDA.',
+      },
+    ],
   },
   meta: {
     title: 'Vladimir Leonov — Senior Frontend & AI Engineer',

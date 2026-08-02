@@ -15,7 +15,7 @@ export function buildPersonJsonLd(locale: Locale, dictionary: Dictionary) {
     '@type': 'Person',
     name: siteConfig.name,
     jobTitle: siteConfig.jobTitle,
-    description: dictionary.meta.description,
+    description: dictionary.faq.summary,
     url: pageUrl,
     email: contacts.email,
     sameAs: [contacts.gitHub, contacts.linkedin, contacts.telegram],
@@ -36,5 +36,23 @@ export function buildWebSiteJsonLd() {
     name: siteConfig.name,
     url: siteUrl,
     inLanguage: ['en', 'ru'],
+  } as const;
+}
+
+export function buildFaqJsonLd(locale: Locale, dictionary: Dictionary) {
+  const siteUrl = getSiteUrl();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: `${siteUrl}/${locale}#about`,
+    mainEntity: dictionary.faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   } as const;
 }
