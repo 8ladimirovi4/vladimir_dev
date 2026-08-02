@@ -10,3 +10,4 @@ export {
 } from './tooltip';
 export { Switch } from './switch';
 export { ThemeProvider } from './theme-provider';
+export { JsonLd } from './json-ld';

@@ -1,12 +1,16 @@
 import type { MetadataRoute } from 'next';
 
+import { getSiteUrl, siteConfig } from '@/shared/config/site';
+
 export default function manifest(): MetadataRoute.Manifest {
+  const siteUrl = getSiteUrl();
+
   return {
-    name: 'Vladimir Leonov',
+    name: siteConfig.name,
     short_name: 'Leonov_V.',
-    description:
-      'Senior Frontend & AI Engineer — React, TypeScript, NestJS, RAG.',
+    description: `${siteConfig.jobTitle} — React, TypeScript, NestJS, RAG.`,
     start_url: '/',
+    id: siteUrl,
     display: 'standalone',
     background_color: '#bdb2a0',
     theme_color: '#bdb2a0',

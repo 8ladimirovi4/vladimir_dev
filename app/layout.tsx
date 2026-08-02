@@ -1,16 +1,20 @@
 import '@/app/ui/global.css';
-import { inter } from '@/app/ui/fonts';
-import { ThemeProvider } from '@/shared/ui';
+import { getSiteUrl, siteConfig, shouldIndexSite } from '@/shared/config/site';
 import { Metadata } from 'next';
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    template: '%s | Vladimir Leonov',
-    default: 'Vladimir Leonov',
+    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.name,
   },
   description:
-    'Senior Frontend & AI Engineer with 7+ years in programming: React, TypeScript, NestJS, RAG (Qdrant + Gemini), FSD architecture, real-time UI, team leadership. Building scalable product interfaces and production AI systems for fintech and high-growth startups.',
-  metadataBase: new URL('https://www.linkedin.com/in/le-vladimir/'),
+    'Senior Frontend & AI Engineer with 7+ years in programming: React, TypeScript, NestJS, RAG (Qdrant + Gemini), FSD architecture, real-time UI, team leadership.',
+  robots: shouldIndexSite(siteUrl)
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 };
 
 export default function RootLayout({
@@ -18,11 +22,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className={`${inter.className} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
-    </html>
-  );
+  return children;
 }

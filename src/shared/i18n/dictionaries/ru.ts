@@ -148,8 +148,24 @@ const ru = {
     },
   },
   meta: {
+    title: 'Владимир Леонов — Senior Frontend & AI Engineer',
     description:
-      'Senior Frontend & AI Engineer, 7+ лет в программировании: React, TypeScript, NestJS, RAG (Qdrant + Gemini), FSD, real-time UI, лидирование команды. Масштабируемые продуктовые интерфейсы и production AI-системы для fintech и high-growth стартапов.',
+      'Senior Frontend & AI Engineer, 7+ лет в программировании: React, NextJS, TypeScript, NestJS, RAG, MCP, пайплайны AI Agents, FSD, real-time UI, лидирование команды. Масштабируемые продуктовые интерфейсы и production AI-системы для fintech и high-growth стартапов.',
+    ogTitle: 'Владимир Леонов — Frontend & AI Engineer',
+    ogDescription:
+      'React, NextJS, TypeScript, NestJS, RAG. Продуктовые интерфейсы и production AI для fintech и high-growth стартапов.',
+    keywords: [
+      'Senior Frontend Developer',
+      'AI Engineer',
+      'React',
+      'NextJS',
+      'TypeScript',
+      'NestJS',
+      'RAG',
+      'Feature-Sliced Design',
+      'WebSocket',
+      'fintech',
+    ],
   },
 } as const;
 
