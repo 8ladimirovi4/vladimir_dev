@@ -45,7 +45,7 @@ export function buildFaqJsonLd(locale: Locale, dictionary: Dictionary) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    url: `${siteUrl}/${locale}#about`,
+    url: `${siteUrl}/${locale}`,
     mainEntity: dictionary.faq.items.map((item) => ({
       '@type': 'Question',
       name: item.question,
