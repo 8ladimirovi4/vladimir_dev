@@ -4,8 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
-pnpm-lock.yaml
 
 # testing
 /coverage
@@ -40,12 +38,8 @@ next-env.d.ts
 #dev artifacts
 dev
 
-# Personal résumés (local only — add to public/cv/ on the server, not in git)
-/public/cv/*.pdf
+# Local CV originals (working copies; production PDFs live in public/cv/)
 /dev/CV/*.pdf
-
-# Local avatar assets (deploy separately)
-/public/avatar/
 
 #cursor
 .cursor
