@@ -14,7 +14,7 @@ concurrency:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-26.04
+    runs-on: ${{ vars.CI_RUNNER_IMAGE || 'ubuntu-26.04' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +29,7 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-26.04
+    runs-on: ${{ vars.CI_RUNNER_IMAGE || 'ubuntu-26.04' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -44,3 +44,23 @@ jobs:
         env:
           NEXT_PUBLIC_SITE_URL: http://127.0.0.1
         run: npm run build
+
+  docker-build:
+    name: Docker build
+    runs-on: ${{ vars.CI_RUNNER_IMAGE || 'ubuntu-26.04' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build image (no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=http://127.0.0.1
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
