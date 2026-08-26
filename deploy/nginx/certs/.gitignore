@@ -1,0 +1,3 @@
+# Keep the directory in git; never commit real certificates.
+*
+!.gitignore
