@@ -12,10 +12,10 @@ concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
 
-# Image names follow the current GitHub repo (owner/name).
-# Optional overrides: repository Variables DOCKERHUB_REPO, GHCR_REPO.
+# GHCR follows github.repository; Docker Hub namespace may differ (vlleo vs 8ladimirovi4).
+# Override via repository Variables DOCKERHUB_REPO, GHCR_REPO.
 env:
-  DOCKERHUB_REPO: ${{ vars.DOCKERHUB_REPO || github.repository }}
+  DOCKERHUB_REPO: ${{ vars.DOCKERHUB_REPO || 'vlleo/vladimir_dev' }}
   GHCR_REPO: ${{ vars.GHCR_REPO || format('ghcr.io/{0}', github.repository) }}
 
 jobs:
