@@ -1,6 +1,6 @@
 # Vladimir Leonov — portfolio
 
-[![Docker Image](https://img.shields.io/docker/v/8ladimirovi4/vladimir_dev?sort=semver)](https://hub.docker.com/r/8ladimirovi4/vladimir_dev)
+[![Docker Image](https://img.shields.io/docker/v/vlleo/vladimir_dev?sort=semver)](https://hub.docker.com/r/vlleo/vladimir_dev)
 
 Personal portfolio site (Next.js): EN/RU, SEO/PWA basics, contact dialog, CV download.
 
@@ -37,7 +37,7 @@ Copy `.env.example` → `.env`  / GitHub Secrets
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `NEXT_PUBLIC_SITE_URL`      | Canonical origin (no trailing slash). Phase 1 (VPS IP):`https://YOUR.SERVER.IP:PORT`. Later with domain + LE: `https://your-domain.com`. |
 | `NEXT_PUBLIC_SITE_INDEXING` | Optional. Omit/`false` → noindex / `Disallow: /` (IP & staging). `true` → allow search + AI search bots after domain launch.           |
-| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `8ladimirovi4/vladimir_dev:v1.0.0`.                                 |
+| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `vlleo/vladimir_dev:v1.0.0`.                                 |
 | `SERVER_IP`                 | VPS static IP (set in`.env` / secrets).                                                                                                  |
 | `NGINX_HTTPS_PORT`          | Host → nginx`443` (e.g. `8443`). Local/VPS `.env`; on CD also GitHub Variable (see below).                                              |
 
@@ -52,20 +52,20 @@ Configure in **Settings → Secrets and variables → Actions**:
 | --- | --- | --- |
 | `CI_RUNNER_IMAGE` | Variable | `runs-on` in CI/CD |
 | `NGINX_HTTPS_PORT` | Variable | Host HTTPS port written to VPS `.env` on deploy |
-| `DOCKERHUB_REPO` | Variable (optional) | Docker Hub image; default `github.repository` (`owner/name`) |
+| `DOCKERHUB_REPO` | Variable (optional) | Docker Hub image; default `vlleo/vladimir_dev` (Hub namespace ≠ GitHub owner) |
+| `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` | Secrets | Docker Hub login; username must match Hub namespace (`vlleo`) |
 | `GHCR_REPO` | Variable (optional) | GHCR image; default `ghcr.io/<github.repository>` |
-| `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` | Secrets | Push image to Docker Hub |
 | `PROD_SITE_URL` | Secret | Build-arg `NEXT_PUBLIC_SITE_URL` |
 | `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY` | Secrets | SSH deploy |
 
-Image path follows the current GitHub repo (or optional Variables above). Tag comes from `github.ref_name` (e.g. `v1.0.0`).
+Hub image defaults to `vlleo/vladimir_dev`; GHCR follows `ghcr.io/<github.repository>`. Tag comes from `github.ref_name` (e.g. `v1.0.0`).
 
 ## Docker
 
 Images: **Docker Hub** (primary) + **GHCR** (mirror).
 
 ```bash
-docker pull 8ladimirovi4/vladimir_dev:latest
+docker pull vlleo/vladimir_dev:latest
 ```
 
 ### Local Compose stack (`web` + `nginx`)
