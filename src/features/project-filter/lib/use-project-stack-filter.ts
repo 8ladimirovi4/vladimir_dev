@@ -2,8 +2,9 @@
 
 /** @layer features / slice project-filter / segment lib — read/write ?stack= + scroll */
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
+
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import type { ProjectStack } from '@/entities/project';
 
@@ -23,7 +24,6 @@ function scrollToProjects() {
 }
 
 export function useProjectStackFilter() {
-  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const activeStack = parseStackParam(searchParams.get(STACK_PARAM));
@@ -41,7 +41,7 @@ export function useProjectStackFilter() {
       const query = params.toString();
       const href = query ? `${pathname}?${query}` : pathname;
 
-      router.replace(href, { scroll: false });
+      window.history.replaceState(null, '', href);
 
       if (options?.scroll !== false) {
         requestAnimationFrame(() => {
@@ -49,14 +49,14 @@ export function useProjectStackFilter() {
         });
       }
     },
-    [pathname, router, searchParams]
+    [pathname, searchParams]
   );
 
   const selectStack = useCallback(
     (stack: ProjectStack) => {
-      setStack(activeStack === stack ? null : stack, { scroll: true });
+      setStack(stack, { scroll: true });
     },
-    [activeStack, setStack]
+    [setStack]
   );
 
   const clearStack = useCallback(() => {

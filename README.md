@@ -19,9 +19,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-
 | Script           | Description            |
-| ------------------ | ------------------------ |
+| ---------------- | ---------------------- |
 | `npm run dev`    | Dev server (Turbopack) |
 | `npm run build`  | Production build       |
 | `npm start`      | Serve production build |
@@ -30,16 +29,15 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment
 
-Copy `.env.example` → `.env`  / GitHub Secrets
-
+Copy `.env.example` → `.env` / GitHub Secrets
 
 | Variable                    | Purpose                                                                                                                                  |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`      | Canonical origin (no trailing slash). Phase 1 (VPS IP):`https://YOUR.SERVER.IP:PORT`. Later with domain + LE: `https://your-domain.com`. |
-| `NEXT_PUBLIC_SITE_INDEXING` | Optional. Omit/`false` → noindex / `Disallow: /` (IP & staging). `true` → allow search + AI search bots after domain launch.           |
-| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `vlleo/vladimir_dev:v1.0.0`.                                 |
+| `NEXT_PUBLIC_SITE_INDEXING` | Optional. Omit/`false` → noindex / `Disallow: /` (IP & staging). `true` → allow search + AI search bots after domain launch.             |
+| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `vlleo/vladimir_dev:v1.0.0`.                                        |
 | `SERVER_IP`                 | VPS static IP (set in`.env` / secrets).                                                                                                  |
-| `NGINX_HTTPS_PORT`          | Host → nginx`443` (e.g. `8443`). Local/VPS `.env`; on CD also GitHub Variable (see below).                                              |
+| `NGINX_HTTPS_PORT`          | Host → nginx`443` (e.g. `8443`). Local/VPS `.env`; on CD also GitHub Variable (see below).                                               |
 
 `NEXT_PUBLIC_*` are inlined at **build time**. Changing the site URL requires a rebuild (and a new release image in production).
 
@@ -47,16 +45,15 @@ Copy `.env.example` → `.env`  / GitHub Secrets
 
 Configure in **Settings → Secrets and variables → Actions**:
 
-
-| Name | Type | Used for |
-| --- | --- | --- |
-| `CI_RUNNER_IMAGE` | Variable | `runs-on` in CI/CD |
-| `NGINX_HTTPS_PORT` | Variable | Host HTTPS port written to VPS `.env` on deploy |
-| `DOCKERHUB_REPO` | Variable (optional) | Docker Hub image; default `vlleo/vladimir_dev` (Hub namespace ≠ GitHub owner) |
-| `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` | Secrets | Docker Hub login; username must match Hub namespace (`vlleo`) |
-| `GHCR_REPO` | Variable (optional) | GHCR image; default `ghcr.io/<github.repository>` |
-| `PROD_SITE_URL` | Secret | Build-arg `NEXT_PUBLIC_SITE_URL` |
-| `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY` | Secrets | SSH deploy |
+| Name                                     | Type                | Used for                                                                      |
+| ---------------------------------------- | ------------------- | ----------------------------------------------------------------------------- |
+| `CI_RUNNER_IMAGE`                        | Variable            | `runs-on` in CI/CD                                                            |
+| `NGINX_HTTPS_PORT`                       | Variable            | Host HTTPS port written to VPS `.env` on deploy                               |
+| `DOCKERHUB_REPO`                         | Variable (optional) | Docker Hub image; default `vlleo/vladimir_dev` (Hub namespace ≠ GitHub owner) |
+| `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` | Secrets             | Docker Hub login; username must match Hub namespace (`vlleo`)                 |
+| `GHCR_REPO`                              | Variable (optional) | GHCR image; default `ghcr.io/<github.repository>`                             |
+| `PROD_SITE_URL`                          | Secret              | Build-arg `NEXT_PUBLIC_SITE_URL`                                              |
+| `VPS_HOST` / `VPS_USER` / `VPS_SSH_KEY`  | Secrets             | SSH deploy                                                                    |
 
 Hub image defaults to `vlleo/vladimir_dev`; GHCR follows `ghcr.io/<github.repository>`. Tag comes from `github.ref_name` (e.g. `v1.0.0`).
 
