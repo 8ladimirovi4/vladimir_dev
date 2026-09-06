@@ -96,7 +96,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "docker-compose.yml,deploy/"
+          source: 'docker-compose.yml,deploy/'
           target: /opt/vladimir_dev
           overwrite: true
 
@@ -106,7 +106,7 @@ jobs:
           WEB_IMAGE: ${{ env.DOCKERHUB_REPO }}:${{ github.ref_name }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.PROD_SITE_URL }}
           SERVER_IP: ${{ secrets.VPS_HOST }}
-          NGINX_HTTPS_PORT: ${{ vars.NGINX_HTTPS_PORT || '8443' }}
+          NGINX_HTTPS_PORT: ${{ vars.NGINX_HTTPS_PORT || '443' }}
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
