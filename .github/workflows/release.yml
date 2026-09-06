@@ -96,7 +96,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          source: "docker-compose.yml,deploy/"
+          source: 'docker-compose.yml,deploy/'
           target: /opt/vladimir_dev
           overwrite: true
 
