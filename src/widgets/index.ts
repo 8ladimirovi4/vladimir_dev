@@ -4,4 +4,5 @@ export * from './technical-expertise';
 export * from './projects';
 export * from './work';
 export * from './philosophy';
+export * from './ask-ai';
 export * from './footer';

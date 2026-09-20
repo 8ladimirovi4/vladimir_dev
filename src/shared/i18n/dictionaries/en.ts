@@ -7,6 +7,7 @@ const en = {
     stack: 'Stack',
     projects: 'Projects',
     engineering: 'Engineering',
+    ask: 'Ask',
     contact: 'Contact',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
@@ -135,6 +136,21 @@ const en = {
       { id: 'mentorship', label: 'Mentorship' },
       { id: 'architecture', label: 'Scalable Architecture' },
     ],
+  },
+  ask: {
+    title: 'Ask about my experience',
+    badge: 'Live demo',
+    subtitle: '',
+    placeholder: 'Ask about my stack, projects, or experience...',
+    sendLabel: 'Send question',
+    chips: [
+      { id: 'rag', label: 'RAG production experience?' },
+      { id: 'websocket', label: 'WebSocket + React projects' },
+      { id: 'lead', label: 'Team lead scope' },
+      { id: 'roles', label: 'Open to new roles?' },
+    ],
+    footerNote:
+      'Answers from public portfolio content only. Not legal advice. Prefer email for hiring decisions.',
   },
   contactModal: {
     title: 'Get in Touch',

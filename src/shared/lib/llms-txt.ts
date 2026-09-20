@@ -49,6 +49,7 @@ export function buildLlmsTxt(): string {
 - \`#projects\` — selected projects
 - \`#work\` — work experience
 - \`#engineering\` — engineering philosophy
+- \`#ask\` — ask about my experience (portfolio Q&A)
 
 ## Notes for agents
 

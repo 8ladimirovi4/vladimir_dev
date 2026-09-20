@@ -27,6 +27,7 @@ export function Navigation({ locale, dictionary }: NavigationProps) {
     { href: '#stack', label: nav.stack },
     { href: '#projects', label: nav.projects },
     { href: '#engineering', label: nav.engineering },
+    { href: '#ask', label: nav.ask, accent: true },
     { href: '#contact', label: nav.contact },
   ] as const;
 
@@ -159,9 +160,14 @@ export function Navigation({ locale, dictionary }: NavigationProps) {
             >
               <a
                 href={item.href}
-                className="block cursor-pointer rounded-xl px-4 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary/60 active:bg-secondary"
+                className="flex cursor-pointer items-center gap-1.5 rounded-xl px-4 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-secondary/60 active:bg-secondary"
                 onClick={closeMenu}
               >
+                {'accent' in item ? (
+                  <span aria-hidden className="text-violet-500">
+                    ✦
+                  </span>
+                ) : null}
                 {item.label}
               </a>
             </li>

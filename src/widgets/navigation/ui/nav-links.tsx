@@ -5,6 +5,7 @@ type NavLabels = {
   stack: string;
   projects: string;
   engineering: string;
+  ask: string;
 };
 
 const linkClassName =
@@ -32,6 +33,12 @@ export function NavLinks({ labels }: NavLinksProps) {
       </a>
       <a href="#engineering" className={linkClassName}>
         {labels.engineering}
+      </a>
+      <a href="#ask" className={`${linkClassName} flex items-center gap-1`}>
+        <span aria-hidden className="text-violet-500">
+          ✦
+        </span>
+        {labels.ask}
       </a>
     </nav>
   );

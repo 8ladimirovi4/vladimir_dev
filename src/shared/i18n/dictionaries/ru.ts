@@ -7,6 +7,7 @@ const ru = {
     stack: 'Стек',
     projects: 'Проекты',
     engineering: 'Инженерия',
+    ask: 'Спросить',
     contact: 'Контакты',
     openMenu: 'Открыть меню',
     closeMenu: 'Закрыть меню',
@@ -135,6 +136,21 @@ const ru = {
       { id: 'mentorship', label: 'Менторство' },
       { id: 'architecture', label: 'Масштабируемая архитектура' },
     ],
+  },
+  ask: {
+    title: 'Спросите об опыте',
+    badge: 'Live demo',
+    subtitle: '',
+    placeholder: 'Спросите о стеке, проектах или опыте...',
+    sendLabel: 'Отправить вопрос',
+    chips: [
+      { id: 'rag', label: 'RAG в продакшне?' },
+      { id: 'websocket', label: 'WebSocket + React проекты' },
+      { id: 'lead', label: 'Опыт тимлида' },
+      { id: 'roles', label: 'Открыт к предложениям?' },
+    ],
+    footerNote:
+      'Ответы только по публичному контенту портфолио. Не юридическая консультация. Для найма предпочтителен email.',
   },
   contactModal: {
     title: 'Связаться со мной',
