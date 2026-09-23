@@ -26,6 +26,9 @@ out/
 dev/
 development_docs
 
+# Separate build context (apps/api/Dockerfile, apps/api/.dockerignore) — not needed by the Next image
+apps/api
+
 # Docker / compose (not needed inside the image build context)
 Dockerfile*
 docker-compose*.yml

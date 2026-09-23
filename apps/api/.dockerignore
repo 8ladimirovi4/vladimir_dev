@@ -1,0 +1,12 @@
+# Dependencies (installed in the image via npm ci)
+node_modules
+
+# Secrets and local env (must not ship in the image or build context)
+.env
+
+# Build artifacts (produced in Dockerfile)
+dist/
+
+# Editor and IDE settings
+.vscode/
+.idea/

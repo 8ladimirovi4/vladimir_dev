@@ -1,0 +1,49 @@
+// https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum DocumentStatus {
+  DRAFT     @map("draft")
+  PUBLISHED @map("published")
+  ARCHIVED  @map("archived")
+}
+
+enum DocumentSection {
+  WORK        @map("work")
+  PROJECTS    @map("projects")
+  STACK       @map("stack")
+  ENGINEERING @map("engineering")
+  ABOUT       @map("about")
+}
+
+model Document {
+  id        String          @id @default(uuid())
+  slug      String          @unique
+  title     String
+  content   String
+  section   DocumentSection
+  status    DocumentStatus  @default(PUBLISHED)
+  tags      String[]        @default([])
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  ragIndexedContentHash String?
+  ragIndexedAt          DateTime?
+
+  @@index([status])
+  @@index([section])
+}
+
+model User {
+  id        String   @id @default(uuid())
+  login     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

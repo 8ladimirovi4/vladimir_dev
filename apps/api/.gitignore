@@ -1,0 +1,13 @@
+# compiled output
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+
+# env
+.env
+
+# Prisma / codegen (if a custom generator output is ever set)
+/generated

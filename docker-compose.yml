@@ -27,6 +27,27 @@ services:
       retries: 5
       start_period: 40s
 
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    # Host port only for local dev (apps/api runs on host during development).
+    # Dropped once `api` is added to this compose file as a service (release_plan.md, stage G).
+    ports:
+      - '${POSTGRES_PORT:-5433}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - developer_net
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   nginx:
     image: nginx:alpine
     ports:
@@ -63,3 +84,4 @@ networks:
 
 volumes:
   certbot-www:
+  postgres_data:
