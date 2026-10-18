@@ -30,11 +30,12 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - '${NGINX_HTTPS_PORT}:443'
+      - '80:80'
+      - '${NGINX_HTTPS_PORT:-443}:443'
     volumes:
       - ./deploy/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./deploy/nginx/conf.d:/etc/nginx/conf.d:ro
-      - ./deploy/nginx/certs:/etc/nginx/certs:ro
+      - certbot-certs:/etc/letsencrypt:ro
       - certbot-www:/var/www/certbot:ro
     depends_on:
       web:
@@ -49,13 +50,20 @@ services:
           'wget',
           '-q',
           '--spider',
-          '--no-check-certificate',
-          'https://127.0.0.1:443/',
+          'http://127.0.0.1:80/healthz',
         ]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 15s
+
+  # Not started by `up`; run on demand: docker compose --profile certbot run --rm certbot ...
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot-certs:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    profiles: ['certbot']
 
 networks:
   developer_net:
@@ -63,3 +71,4 @@ networks:
 
 volumes:
   certbot-www:
+  certbot-certs:
