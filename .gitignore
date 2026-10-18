@@ -43,3 +43,8 @@ dev
 
 #cursor
 .cursor
+
+#claude
+.claude/
+CLAUDE.md
+.cursorignore
