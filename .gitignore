@@ -48,3 +48,8 @@ dev
 .claude/
 CLAUDE.md
 .cursorignore
+
+# Codex
+/.codex/
+/.agents/
+AGENTS.md
