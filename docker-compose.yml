@@ -48,6 +48,23 @@ services:
       timeout: 5s
       retries: 5
 
+  qdrant:
+    container_name: ${RAG_VECTOR_COLLECTION:-vladimir_dev_documents}
+    image: qdrant/qdrant:v1.20.0
+    ports:
+      - '127.0.0.1:${QUADRANT_PORT:-6333}:6333'
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - developer_net
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'bash -c "exec 3<>/dev/tcp/127.0.0.1/6333"']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
   nginx:
     image: nginx:alpine
     ports:
@@ -65,14 +82,7 @@ services:
       - developer_net
     restart: unless-stopped
     healthcheck:
-      test:
-        [
-          'CMD',
-          'wget',
-          '-q',
-          '--spider',
-          'http://127.0.0.1:80/healthz',
-        ]
+      test: ['CMD', 'wget', '-q', '--spider', 'http://127.0.0.1:80/healthz']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -94,3 +104,4 @@ volumes:
   certbot-www:
   certbot-certs:
   postgres_data:
+  qdrant_data:

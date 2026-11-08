@@ -6,6 +6,7 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { DocumentModule } from './document/document.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { QdrantModule } from './rag/vector-store/qdrant.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { PrismaModule } from './prisma/prisma.module';
     PrismaModule,
     AuthModule,
     DocumentModule,
+    QdrantModule,
   ],
   providers: [
     {
