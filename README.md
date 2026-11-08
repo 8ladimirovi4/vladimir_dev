@@ -31,12 +31,12 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Copy `.env.example` → `.env` / GitHub Secrets
 
-| Variable                    | Purpose                                                                                                                                  |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`      | Canonical origin (no trailing slash), e.g. `https://vlleo.com`.                                                                          |
-| `NEXT_PUBLIC_SITE_INDEXING` | Optional. Omit/`false` → noindex / `Disallow: /` (staging). `true` → allow search + AI search bots. In CD set via `PROD_SITE_INDEXING`.  |
-| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `vlleo/vladimir_dev:v1.1.0`.                                        |
-| `NGINX_HTTPS_PORT`          | Optional. Host → nginx`443`, default `443`. On CD also GitHub Variable (see below).                                                      |
+| Variable                    | Purpose                                                                                                                                 |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`      | Canonical origin (no trailing slash), e.g. `https://vlleo.com`.                                                                         |
+| `NEXT_PUBLIC_SITE_INDEXING` | Optional. Omit/`false` → noindex / `Disallow: /` (staging). `true` → allow search + AI search bots. In CD set via `PROD_SITE_INDEXING`. |
+| `WEB_IMAGE`                 | Compose image tag. Local:`vladimir_dev:local`. VPS/CD: Hub tag, e.g. `vlleo/vladimir_dev:v1.1.0`.                                       |
+| `NGINX_HTTPS_PORT`          | Optional. Host → nginx`443`, default `443`. On CD also GitHub Variable (see below).                                                     |
 
 `NEXT_PUBLIC_*` are inlined at **build time**. Changing the site URL requires a rebuild (and a new release image in production).
 
@@ -47,7 +47,7 @@ Configure in **Settings → Secrets and variables → Actions**:
 | Name                                     | Type                | Used for                                                                      |
 | ---------------------------------------- | ------------------- | ----------------------------------------------------------------------------- |
 | `CI_RUNNER_IMAGE`                        | Variable            | `runs-on` in CI/CD                                                            |
-| `NGINX_HTTPS_PORT`                       | Variable (optional) | Host HTTPS port written to VPS `.env` on deploy; default `443`               |
+| `NGINX_HTTPS_PORT`                       | Variable (optional) | Host HTTPS port written to VPS `.env` on deploy; default `443`                |
 | `PROD_SITE_INDEXING`                     | Variable            | Build-arg `NEXT_PUBLIC_SITE_INDEXING` (`true` → search indexing allowed)      |
 | `DOCKERHUB_REPO`                         | Variable (optional) | Docker Hub image; default `vlleo/vladimir_dev` (Hub namespace ≠ GitHub owner) |
 | `DOCKERHUB_USERNAME` / `DOCKERHUB_TOKEN` | Secrets             | Docker Hub login; username must match Hub namespace (`vlleo`)                 |
